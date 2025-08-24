@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://v7gpoudpi5yn"]
+[gd_scene load_steps=8 format=3 uid="uid://v7gpoudpi5yn"]
 
 [ext_resource type="Shader" uid="uid://dj5mxk0yibeiu" path="res://src/gameplay/crt_luminance_preservation.gdshader" id="1_4h5e2"]
 [ext_resource type="Script" uid="uid://cal0ohrx6qun" path="res://src/gameplay/gameplay_crt.gd" id="1_vv5xl"]
@@ -20,6 +20,12 @@ shader_parameter/scanline_brightness = 1.0
 shader_parameter/min_scanline_thickness = 0.5
 shader_parameter/aspect = 0.75
 shader_parameter/wobble_strength = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_vv5xl"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_nnt6u"]
+font_size = 26
 
 [node name="GameplayCrt" type="Control"]
 layout_mode = 3
@@ -52,3 +58,27 @@ offset_bottom = 23.0
 text = "16/16 Hearts
 Bombs
 Whatever"
+
+[node name="Title" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 168.0
+offset_top = 137.0
+offset_right = 668.0
+offset_bottom = 212.0
+text = "Super Item"
+label_settings = SubResource("LabelSettings_vv5xl")
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 168.0
+offset_top = 252.0
+offset_right = 668.0
+offset_bottom = 327.0
+text = "Desc"
+label_settings = SubResource("LabelSettings_nnt6u")
+horizontal_alignment = 1

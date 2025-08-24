@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://j87n4lychbt5"]
+[gd_scene load_steps=8 format=3 uid="uid://j87n4lychbt5"]
 
 [ext_resource type="Script" uid="uid://dxywthnf86ops" path="res://src/main_menu/version_label.gd" id="1_5huni"]
+[ext_resource type="Texture2D" uid="uid://d13ws7erhba3j" path="res://assets/20250824-0422-Godot_v4.4-stable_win64-816x528.png" id="1_b2bbe"]
 [ext_resource type="PackedScene" uid="uid://bdnyglk1i1cxl" path="res://src/gameplay/gameplay.tscn" id="2_5nvqq"]
 [ext_resource type="Script" uid="uid://b8itk44tg47i0" path="res://src/main_menu/menu_options.gd" id="2_gpv3d"]
 [ext_resource type="PackedScene" uid="uid://dpicmplffpula" path="res://src/settings/settings.tscn" id="3_2osu0"]
 [ext_resource type="PackedScene" uid="uid://cee5dna3u27jf" path="res://assets/select_sfx.tscn" id="4_82nwe"]
+[ext_resource type="AudioStream" uid="uid://bbijhbe74pbit" path="res://assets/The Twinspire Curse - Menu Upgrades.ogg" id="6_wrmdx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,6 +25,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.545085, 0.246661, 0.327657, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_b2bbe")
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -34,7 +42,7 @@ offset_right = 65.5
 offset_bottom = 135.0
 grow_horizontal = 2
 theme_type_variation = &"HeaderLarge"
-text = "YOUR GAME"
+text = "Navigationally Challenged"
 horizontal_alignment = 1
 
 [node name="Credit" type="Label" parent="."]
@@ -47,7 +55,7 @@ offset_top = 156.0
 offset_right = 59.5
 offset_bottom = 182.0
 grow_horizontal = 2
-text = "A game by YOU"
+text = "Made by Daniel Eichler \"Polatrite\""
 
 [node name="Controls" type="Label" parent="."]
 layout_mode = 1
@@ -63,8 +71,10 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "CONTROLS
-Move: WASD | Accept: J | Cancel: K | Pause: P
-Move: Arrow Keys | Accept: Z | Cancel: Z | Pause: Esc
+Move: WASD
+Jump: J (with upgrade)
+Blaster: K (with upgrade)
+Pause: P
 Gamepads work too!"
 horizontal_alignment = 2
 vertical_alignment = 2
@@ -142,6 +152,10 @@ layout_mode = 2
 text = "Exit to Desktop"
 
 [node name="SelectSfx" parent="MarginContainer/MenuOptions" instance=ExtResource("4_82nwe")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wrmdx")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/MenuOptions/Start" to="MarginContainer/MenuOptions" method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/MenuOptions/Settings" to="MarginContainer/MenuOptions" method="_on_settings_pressed"]
