@@ -37,8 +37,8 @@ SignalBus="*res://xplib/systems/SignalBus.gd"
 
 [display]
 
-window/size/viewport_width=792
-window/size/viewport_height=624
+window/size/viewport_width=816
+window/size/viewport_height=528
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=4

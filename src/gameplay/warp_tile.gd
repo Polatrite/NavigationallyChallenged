@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 
 func setup_sprite():
 	var result = get_teleport_dest()
-	print(result)
+	#print(result)
 	$Sprite2D.texture = dir_map[result[0]]
 	$Sprite2D.modulate = color_map[result[1]]
 
@@ -44,7 +44,7 @@ func get_teleport_dest():
 		dir = Vector2.DOWN
 		dist = int(kind[4])
 	var warp_offset = dir * Vector2(56,56)
-	var teleport_dest = dir * dist * Vector2(408, 312) + warp_offset  #Constants.screen_width
+	var teleport_dest = dir * dist * Vector2(408, 264) + warp_offset  #Constants.screen_width
 	return [dir, dist, teleport_dest]
 
 

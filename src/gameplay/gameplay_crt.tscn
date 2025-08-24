@@ -39,7 +39,7 @@ grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
-size = Vector2i(408, 312)
+size = Vector2i(408, 264)
 
 [node name="World" parent="SubViewport" instance=ExtResource("2_b363w")]
 
