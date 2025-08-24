@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dj4fo6g8xnk4i"
+path="res://.godot/imported/The Twinspire Curse - Waterways.ogg-cbfe533aff198489e501c955409c9bad.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/The Twinspire Curse - Waterways.ogg"
+dest_files=["res://.godot/imported/The Twinspire Curse - Waterways.ogg-cbfe533aff198489e501c955409c9bad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

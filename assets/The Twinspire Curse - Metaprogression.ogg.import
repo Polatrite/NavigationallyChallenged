@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc0i01a56gqmx"
+path="res://.godot/imported/The Twinspire Curse - Metaprogression.ogg-23c10a0c83ca4b71fb193d2825f1364e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/The Twinspire Curse - Metaprogression.ogg"
+dest_files=["res://.godot/imported/The Twinspire Curse - Metaprogression.ogg-23c10a0c83ca4b71fb193d2825f1364e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

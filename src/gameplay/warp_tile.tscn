@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cchdisrbwd2l6"]
+
+[ext_resource type="Script" uid="uid://c0dwvawle2lq5" path="res://src/gameplay/warp_tile.gd" id="1_xh336"]
+[ext_resource type="Texture2D" uid="uid://e2co88gemelj" path="res://assets/Oryx 16-bit Fantasy/Sliced/world_24x24/oryx_16bit_fantasy_world_1832.png" id="2_i3602"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3602"]
+radius = 2.0
+
+[node name="WarpTile" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_xh336")
+kind = "left1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i3602")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_i3602")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

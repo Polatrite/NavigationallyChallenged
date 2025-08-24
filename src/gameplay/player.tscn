@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://tjoubmtpeouu"]
+
+[ext_resource type="Script" uid="uid://bs0jfyxs8t0l8" path="res://src/gameplay/player.gd" id="1_4j6do"]
+[ext_resource type="Texture2D" uid="uid://cwfn5c4o3r38l" path="res://assets/Oryx 16-bit Fantasy/oryx_16bit_fantasy_creatures_trans.png" id="2_oyjl1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6rxk"]
+radius = 6.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("1_4j6do")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x6rxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oyjl1")
+hframes = 20
+vframes = 27
+frame = 63

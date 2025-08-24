@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://v7gpoudpi5yn"]
+
+[ext_resource type="Shader" uid="uid://dj5mxk0yibeiu" path="res://src/gameplay/crt_luminance_preservation.gdshader" id="1_4h5e2"]
+[ext_resource type="PackedScene" uid="uid://b48flw3v5qk7q" path="res://src/gameplay/world.tscn" id="2_b363w"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_spf5d"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b363w"]
+resource_local_to_scene = true
+shader = ExtResource("1_4h5e2")
+shader_parameter/tex = SubResource("ViewportTexture_spf5d")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.0
+shader_parameter/sharpness = 0.666667
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/min_scanline_thickness = 0.5
+shader_parameter/aspect = 0.75
+shader_parameter/wobble_strength = 0.0
+
+[node name="GameplayCrt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_b363w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(408, 312)
+
+[node name="World" parent="SubViewport" instance=ExtResource("2_b363w")]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "16/16 Hearts
+Bombs
+Whatever"

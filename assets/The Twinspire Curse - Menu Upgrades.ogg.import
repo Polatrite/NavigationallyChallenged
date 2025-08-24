@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bbijhbe74pbit"
+path="res://.godot/imported/The Twinspire Curse - Menu Upgrades.ogg-279620c85b422f3bd8b33522abada53a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/The Twinspire Curse - Menu Upgrades.ogg"
+dest_files=["res://.godot/imported/The Twinspire Curse - Menu Upgrades.ogg-279620c85b422f3bd8b33522abada53a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
