@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b48flw3v5qk7q"]
+[gd_scene load_steps=10 format=4 uid="uid://b48flw3v5qk7q"]
 
 [ext_resource type="Script" uid="uid://gs1ywaqx4evs" path="res://src/gameplay/camera_2d.gd" id="1_8pgph"]
 [ext_resource type="Script" uid="uid://bwgjmw7abnlum" path="res://src/gameplay/world.gd" id="1_opbiu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tjoubmtpeouu" path="res://src/gameplay/player.tscn" id="3_8pgph"]
 [ext_resource type="PackedScene" uid="uid://cchdisrbwd2l6" path="res://src/gameplay/warp_tile.tscn" id="5_ht8uj"]
 [ext_resource type="PackedScene" uid="uid://357k5ai4dhhp" path="res://src/gameplay/pickup.tscn" id="5_opbiu"]
+[ext_resource type="PackedScene" uid="uid://2gfe4gxuxlwl" path="res://src/gameplay/bomb_tile.tscn" id="7_hc16m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clpda"]
 texture = ExtResource("1_tnd4q")
@@ -2062,3 +2063,15 @@ kind = "boots"
 [node name="Pickup6" parent="." instance=ExtResource("5_opbiu")]
 position = Vector2(-336, -180)
 kind = "creaturePhasing"
+
+[node name="BombTile" parent="." instance=ExtResource("7_hc16m")]
+position = Vector2(-288, -96)
+
+[node name="BombTile2" parent="." instance=ExtResource("7_hc16m")]
+position = Vector2(-288, -72)
+
+[node name="BombTile3" parent="." instance=ExtResource("7_hc16m")]
+position = Vector2(-264, -96)
+
+[node name="BombTile4" parent="." instance=ExtResource("7_hc16m")]
+position = Vector2(-264, -72)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2gfe4gxuxlwl"]
+
+[ext_resource type="Script" uid="uid://b88hqk1njr3re" path="res://src/gameplay/bomb_tile.gd" id="1_uypiw"]
+[ext_resource type="Texture2D" uid="uid://bl00ceh3p0r86" path="res://assets/Oryx 16-bit Fantasy/Sliced/world_24x24/oryx_16bit_fantasy_world_174.png" id="1_y6prt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uypiw"]
+size = Vector2(12, 12)
+
+[node name="BombTile" type="StaticBody2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_uypiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uypiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y6prt")
