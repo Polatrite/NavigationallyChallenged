@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillBoardNode" load_steps=2 format=3 uid="uid://db1nrcvrmebqf"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/skill-board/skill_node_resource.gd" id="1_r5pr3"]
+
+[resource]
+script = ExtResource("1_r5pr3")
+skill_id = -1
+position = Vector2(0, 0)
+links = Array[int]([])
+name = &""
+scale = Vector2(1, 1)
+fill_color = null
+border_color = null
+allocation_bonuses = Array[Resource]([])

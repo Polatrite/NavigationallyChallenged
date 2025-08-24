@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu8e1he28ooni"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/dnd-items/ItemSlotContainer.gd" id="1"]
+
+[node name="ItemSlotContainer" type="GridContainer"]
+offset_right = 480.0
+offset_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 5
+script = ExtResource("1")

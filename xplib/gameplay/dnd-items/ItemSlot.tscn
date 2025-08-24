@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://y3wq666jwi4d"]
+
+[ext_resource type="Texture2D" uid="uid://c1w0bd3oevaqp" path="res://gameplaylib-assets/dnd-items/32X32 DARK.png" id="1"]
+[ext_resource type="Script" path="res://gameplaylib/dnd-items/ItemSlot.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ib1nsti2jk3" path="res://gameplaylib-assets/dnd-items/32X32 LIGHT.png" id="3"]
+
+[node name="InvSlot1" type="TextureRect"]
+custom_minimum_size = Vector2(95, 95)
+offset_right = 95.0
+offset_bottom = 95.0
+expand_mode = 1
+script = ExtResource("2")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -40.5
+offset_right = -8.5
+offset_bottom = -8.5
+scale = Vector2(2.5, 2.5)
+
+[node name="SheetDark" type="Sprite2D" parent="."]
+position = Vector2(48, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("1")
+hframes = 16
+vframes = 352
+
+[node name="SheetLight" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(48, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("3")
+hframes = 16
+vframes = 352
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+size_flags_horizontal = 3

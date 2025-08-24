@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwy7xf3uj5m7x"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/skill-board/edit_node_context_menu.gd" id="1_ieol6"]
+
+[node name="context_menu" type="PanelContainer"]
+offset_right = 86.0
+offset_bottom = 62.0
+script = ExtResource("1_ieol6")
+
+[node name="buttons" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="label" type="Label" parent="buttons"]
+layout_mode = 2
+text = "Node #"
+
+[node name="btn_edit" type="Button" parent="buttons"]
+layout_mode = 2
+text = "Edit"
+
+[node name="btn_link" type="Button" parent="buttons"]
+layout_mode = 2
+text = "Link"
+
+[node name="btn_delete" type="Button" parent="buttons"]
+layout_mode = 2
+text = "Delete"

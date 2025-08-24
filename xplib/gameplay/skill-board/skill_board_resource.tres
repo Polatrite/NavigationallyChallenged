@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://df0r6c8b0icqt"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/skill-board/skill_board_resource.gd" id="1_b55ei"]
+
+[resource]
+script = ExtResource("1_b55ei")
+name = ""
+starting_node_index = 0
+nodes = Array[Resource("res://xplib/gameplay/skill-board/skill_node_resource.gd")]([])

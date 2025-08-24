@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillBoardNode" load_steps=2 format=3 uid="uid://lw2ljsgl01b5"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/skill-board/stat_bonus_resource.gd" id="1_bhb7u"]
+
+[resource]
+script = ExtResource("1_bhb7u")
+description = ""
+stat_type = &""
+operator = 0
+value = 0.0

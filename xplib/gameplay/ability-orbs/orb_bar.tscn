@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ojloptutfqid"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/ability-orbs/orb_bar.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2o3fo7wlfbqx" path="res://assets/ui/orb/orbs.png" id="2_3s7t5"]
+
+[node name="OrbBar" type="Node2D"]
+position = Vector2(0, 19)
+script = ExtResource("2")
+
+[node name="Sprite4" type="Sprite2D" parent="."]
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15
+
+[node name="Sprite3" type="Sprite2D" parent="."]
+position = Vector2(-14, 0)
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15
+
+[node name="Sprite5" type="Sprite2D" parent="."]
+position = Vector2(14, 0)
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(-28, 0)
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15
+
+[node name="Sprite6" type="Sprite2D" parent="."]
+position = Vector2(28, 0)
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15
+
+[node name="Sprite1" type="Sprite2D" parent="."]
+position = Vector2(-42, 0)
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15
+
+[node name="Sprite7" type="Sprite2D" parent="."]
+position = Vector2(42, 0)
+texture = ExtResource("2_3s7t5")
+hframes = 16
+frame = 15

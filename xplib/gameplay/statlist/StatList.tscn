@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtdmj8meuntt0"]
+
+[ext_resource type="Script" path="res://gameplaylib/StatList.gd" id="1"]
+
+[node name="StatList" type="Node"]
+script = ExtResource("1")
+noop = null
+health = null
+damage = null

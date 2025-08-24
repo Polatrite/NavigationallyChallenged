@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpicmplffpula"]
+
+[ext_resource type="Script" uid="uid://lelt73j4ty4s" path="res://src/settings/settings_controls.gd" id="1_n5jcg"]
+[ext_resource type="Script" uid="uid://bd3l0skcn05np" path="res://src/settings/fullscreen_toggle.gd" id="2_xaxe3"]
+[ext_resource type="Script" uid="uid://kj3ae5wal8v4" path="res://src/settings/sfx_toggle.gd" id="3_ojkp7"]
+[ext_resource type="Script" uid="uid://unrt64op03m3" path="res://src/settings/music_toggle.gd" id="4_0gokw"]
+[ext_resource type="Script" uid="uid://bn8j8uvjrg81h" path="res://src/settings/back_button.gd" id="5_uk7ws"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.223529, 0.27451, 1)
+
+[node name="SettingsControls" type="VFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 20
+alignment = 1
+script = ExtResource("1_n5jcg")
+
+[node name="Title" type="Label" parent="SettingsControls"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Explainer" type="Label" parent="SettingsControls"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Configure the game. Settings are automatically saved when changed."
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FullscreenToggle" type="CheckButton" parent="SettingsControls"]
+layout_mode = 2
+text = "Fullscreen"
+script = ExtResource("2_xaxe3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsControls"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SfxToggle" type="CheckButton" parent="SettingsControls/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sound Effects (75%)"
+script = ExtResource("3_ojkp7")
+
+[node name="SfxSlider" type="HSlider" parent="SettingsControls/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+step = 2.5
+value = 75.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SettingsControls"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MusicToggle" type="CheckButton" parent="SettingsControls/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Music (60%)"
+script = ExtResource("4_0gokw")
+
+[node name="MusicSlider" type="HSlider" parent="SettingsControls/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+step = 2.5
+value = 60.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+
+[node name="BackButton" type="Button" parent="SettingsControls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+script = ExtResource("5_uk7ws")
+
+[connection signal="toggled" from="SettingsControls/FullscreenToggle" to="SettingsControls/FullscreenToggle" method="_on_toggled"]
+[connection signal="toggled" from="SettingsControls/VBoxContainer/SfxToggle" to="SettingsControls/VBoxContainer/SfxToggle" method="_on_toggled"]
+[connection signal="toggled" from="SettingsControls/VBoxContainer2/MusicToggle" to="SettingsControls/VBoxContainer2/MusicToggle" method="_on_toggled"]
+[connection signal="pressed" from="SettingsControls/BackButton" to="SettingsControls/BackButton" method="_on_pressed"]

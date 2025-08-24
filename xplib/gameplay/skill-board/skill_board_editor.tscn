@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://cluollu5bad4n"]
+
+[ext_resource type="Script" path="res://xplib/gameplay/skill-board/skill_board_editor.gd" id="1_644ef"]
+[ext_resource type="Script" path="res://xplib/gameplay/skill-board/draw_grid.gd" id="2_r5nhw"]
+
+[node name="skill_board_editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_644ef")
+
+[node name="draw_grid" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("2_r5nhw")
+
+[node name="camera_2d" type="Camera2D" parent="."]
+
+[node name="hud" type="MarginContainer" parent="camera_2d"]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="v_box_container" type="VBoxContainer" parent="camera_2d/hud"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="btn_add_node" type="Button" parent="camera_2d/hud/v_box_container"]
+layout_mode = 2
+text = "Add Node"
+
+[node name="btn_add_path" type="Button" parent="camera_2d/hud/v_box_container"]
+layout_mode = 2
+text = "Add Path"
+
+[node name="btn_center" type="Button" parent="camera_2d/hud/v_box_container"]
+layout_mode = 2
+text = "Center"
+
+[node name="label" type="Label" parent="camera_2d/hud/v_box_container"]
+layout_mode = 2
+text = "Snap Pixels"
+
+[node name="edit_snap_pixels" type="SpinBox" parent="camera_2d/hud/v_box_container"]
+layout_mode = 2
+max_value = 1000.0
+value = 32.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="camera_2d/hud/v_box_container/btn_add_node" to="." method="_on_btn_add_node_pressed"]
+[connection signal="pressed" from="camera_2d/hud/v_box_container/btn_center" to="." method="_on_btn_center_pressed"]

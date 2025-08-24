@@ -1,0 +1,148 @@
+[gd_scene load_steps=6 format=3 uid="uid://j87n4lychbt5"]
+
+[ext_resource type="Script" uid="uid://dxywthnf86ops" path="res://src/main_menu/version_label.gd" id="1_5huni"]
+[ext_resource type="PackedScene" uid="uid://bdnyglk1i1cxl" path="res://src/gameplay/gameplay.tscn" id="2_5nvqq"]
+[ext_resource type="Script" uid="uid://b8itk44tg47i0" path="res://src/main_menu/menu_options.gd" id="2_gpv3d"]
+[ext_resource type="PackedScene" uid="uid://dpicmplffpula" path="res://src/settings/settings.tscn" id="3_2osu0"]
+[ext_resource type="PackedScene" uid="uid://cee5dna3u27jf" path="res://assets/select_sfx.tscn" id="4_82nwe"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.545085, 0.246661, 0.327657, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.5
+offset_top = 93.0
+offset_right = 65.5
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "YOUR GAME"
+horizontal_alignment = 1
+
+[node name="Credit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.5
+offset_top = 156.0
+offset_right = 59.5
+offset_bottom = 182.0
+grow_horizontal = 2
+text = "A game by YOU"
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -424.0
+offset_top = -120.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "CONTROLS
+Move: WASD | Accept: J | Cancel: K | Pause: P
+Move: Arrow Keys | Accept: Z | Cancel: Z | Pause: Esc
+Gamepads work too!"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -52.0
+offset_right = -17.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "INSTRUCTIONS
+Collect all the things!"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -277.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 127.0
+grow_horizontal = 0
+text = "Version: [set dynamically]"
+horizontal_alignment = 2
+script = ExtResource("1_5huni")
+
+[node name="DebugUIStatus" type="Label" parent="." groups=["debug_ui"]]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 162.0
+offset_bottom = 49.0
+text = "Debug UI enabled"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 188.0
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer" node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 2
+shortcut_context = NodePath("Start")
+theme_override_constants/separation = 10
+alignment = 2
+script = ExtResource("2_gpv3d")
+gameplay_scene = ExtResource("2_5nvqq")
+settings_scene = ExtResource("3_2osu0")
+
+[node name="Start" type="Button" parent="MarginContainer/MenuOptions"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+text = "Start"
+
+[node name="Settings" type="Button" parent="MarginContainer/MenuOptions"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MarginContainer/MenuOptions"]
+layout_mode = 2
+text = "Exit to Desktop"
+
+[node name="SelectSfx" parent="MarginContainer/MenuOptions" instance=ExtResource("4_82nwe")]
+
+[connection signal="pressed" from="MarginContainer/MenuOptions/Start" to="MarginContainer/MenuOptions" method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuOptions/Settings" to="MarginContainer/MenuOptions" method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuOptions/Quit" to="MarginContainer/MenuOptions" method="_on_quit_pressed"]
