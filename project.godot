@@ -15,7 +15,7 @@ config/description="A skeleton project made to bootstrap Godot 4 games, specific
 Godot version: 4.4-stable.
 "
 config/tags=PackedStringArray("library")
-run/main_scene="uid://v7gpoudpi5yn"
+run/main_scene="uid://j87n4lychbt5"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://assets/icon.svg"
 

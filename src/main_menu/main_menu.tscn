@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dxywthnf86ops" path="res://src/main_menu/version_label.gd" id="1_5huni"]
 [ext_resource type="Texture2D" uid="uid://d13ws7erhba3j" path="res://assets/20250824-0422-Godot_v4.4-stable_win64-816x528.png" id="1_b2bbe"]
-[ext_resource type="PackedScene" uid="uid://bdnyglk1i1cxl" path="res://src/gameplay/gameplay.tscn" id="2_5nvqq"]
 [ext_resource type="Script" uid="uid://b8itk44tg47i0" path="res://src/main_menu/menu_options.gd" id="2_gpv3d"]
 [ext_resource type="PackedScene" uid="uid://dpicmplffpula" path="res://src/settings/settings.tscn" id="3_2osu0"]
 [ext_resource type="PackedScene" uid="uid://cee5dna3u27jf" path="res://assets/select_sfx.tscn" id="4_82nwe"]
+[ext_resource type="PackedScene" uid="uid://v7gpoudpi5yn" path="res://src/gameplay/gameplay_crt.tscn" id="4_b2bbe"]
 [ext_resource type="AudioStream" uid="uid://bbijhbe74pbit" path="res://assets/The Twinspire Curse - Menu Upgrades.ogg" id="6_wrmdx"]
 
 [node name="MainMenu" type="Control"]
@@ -135,7 +135,7 @@ shortcut_context = NodePath("Start")
 theme_override_constants/separation = 10
 alignment = 2
 script = ExtResource("2_gpv3d")
-gameplay_scene = ExtResource("2_5nvqq")
+gameplay_scene = ExtResource("4_b2bbe")
 settings_scene = ExtResource("3_2osu0")
 
 [node name="Start" type="Button" parent="MarginContainer/MenuOptions"]

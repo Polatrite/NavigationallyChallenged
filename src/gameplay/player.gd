@@ -96,4 +96,19 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func fall_in_pit():
 	stop_jumping()
+	movement_locked = 0.4
 	global_position = room_starting_pos
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "visible", false, 0.05)
+	tween.chain()
+	tween.tween_property(self, "visible", true, 0.05)
+	tween.chain()
+	tween.tween_property(self, "visible", false, 0.05)
+	tween.chain()
+	tween.tween_property(self, "visible", true, 0.05)
+	tween.chain()
+	tween.tween_property(self, "visible", false, 0.05)
+	tween.chain()
+	tween.tween_property(self, "visible", true, 0.05)
+	tween.chain()
+	tween.play()
