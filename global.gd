@@ -1,5 +1,19 @@
 extends Node
 
+# unlocks
+var unlocks = {
+	"door1": false,
+	"door2": false,
+	"door3": false,
+	"bomb": false,
+	"boots": false,
+	"creaturePhasing": false,
+}
+var coins = 0
+var hearts = 4
+var max_hearts = 4
+
+
 # consts
 const SCENE_MAIN_MENU = "res://src/main_menu/main_menu.tscn"
 const EXPORT_CONFIG_FILE := "res://export.cfg"

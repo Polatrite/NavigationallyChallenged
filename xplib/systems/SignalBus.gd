@@ -1,5 +1,8 @@
 extends Node
 
+signal pickup_collected(kind)
+signal unlock_granted(kind)
+
 
 # define new signals here
 signal generic_signal(param)

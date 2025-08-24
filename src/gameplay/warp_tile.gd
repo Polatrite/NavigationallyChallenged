@@ -3,6 +3,7 @@ extends Area2D
 
 @export_enum("left1", "left2", "left3", "right1", "right2", "right3", "up1", "up2", "up3", "down1", "down2", "down3") var kind: String
 
+var unrevealed_texture = preload("res://assets/Oryx 16-bit Fantasy/Sliced/world_24x24/oryx_16bit_fantasy_world_430.png")
 var dir_map = {
 	Vector2.LEFT: preload("res://assets/Oryx 16-bit Fantasy/Sliced/world_24x24/oryx_16bit_fantasy_world_1832.png"),
 	Vector2.DOWN: preload("res://assets/Oryx 16-bit Fantasy/Sliced/world_24x24/oryx_16bit_fantasy_world_1831.png"),
@@ -16,7 +17,10 @@ var color_map = {
 }
 
 func _ready() -> void:
-	setup_sprite()
+	var result = setup_sprite()
+	add_to_group("warp")
+	add_to_group(str("warp-", kind))
+	add_to_group(str("warp-", result[1]))
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -25,8 +29,22 @@ func _process(delta: float) -> void:
 func setup_sprite():
 	var result = get_teleport_dest()
 	#print(result)
-	$Sprite2D.texture = dir_map[result[0]]
-	$Sprite2D.modulate = color_map[result[1]]
+	var should_reveal = false
+	if !Engine.is_editor_hint():
+		if result[1] == 1 and Global.unlocks["door1"] == true:
+			should_reveal = true
+		if result[1] == 2 and Global.unlocks["door2"] == true:
+			should_reveal = true
+		if result[1] == 3 and Global.unlocks["door3"] == true:
+			should_reveal = true
+	$StaticBody2D/CollisionShape2D.disabled = should_reveal
+	if should_reveal:
+		$Sprite2D.texture = dir_map[result[0]]
+		$Sprite2D.modulate = color_map[result[1]]
+	else:
+		$Sprite2D.texture = unrevealed_texture
+		$Sprite2D.modulate = Color.WHITE
+	return result
 
 func get_teleport_dest():
 	var dir: Vector2
@@ -43,8 +61,8 @@ func get_teleport_dest():
 	elif kind.begins_with("down"):
 		dir = Vector2.DOWN
 		dist = int(kind[4])
-	var warp_offset = dir * Vector2(56,56)
-	var teleport_dest = dir * dist * Vector2(408, 264) + warp_offset  #Constants.screen_width
+	var warp_offset = dir * Vector2(48,48)
+	var teleport_dest = dir * (dist - 1) * Vector2(408, 264) + warp_offset  #Constants.screen_width
 	return [dir, dist, teleport_dest]
 
 

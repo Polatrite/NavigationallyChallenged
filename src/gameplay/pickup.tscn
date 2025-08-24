@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://357k5ai4dhhp"]
+
+[ext_resource type="Script" uid="uid://dreg0k6k1fvhg" path="res://src/gameplay/pickup.gd" id="1_fvlxl"]
+[ext_resource type="Texture2D" uid="uid://bgw5krvv64jne" path="res://assets/Oryx 16-bit Fantasy/oryx_16bit_fantasy_items_trans.png" id="2_ubir8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubir8"]
+radius = 13.0
+
+[node name="Pickup" type="Area2D"]
+script = ExtResource("1_fvlxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ubir8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ubir8")
+hframes = 24
+vframes = 19
+frame = 103
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://b48flw3v5qk7q"]
+[gd_scene load_steps=8 format=4 uid="uid://b48flw3v5qk7q"]
 
 [ext_resource type="Script" uid="uid://gs1ywaqx4evs" path="res://src/gameplay/camera_2d.gd" id="1_8pgph"]
 [ext_resource type="Texture2D" uid="uid://c7tivf7oovkg6" path="res://assets/Oryx 16-bit Fantasy/oryx_16bit_fantasy_world_trans.png" id="1_tnd4q"]
 [ext_resource type="PackedScene" uid="uid://tjoubmtpeouu" path="res://src/gameplay/player.tscn" id="3_8pgph"]
 [ext_resource type="PackedScene" uid="uid://cchdisrbwd2l6" path="res://src/gameplay/warp_tile.tscn" id="5_ht8uj"]
+[ext_resource type="PackedScene" uid="uid://357k5ai4dhhp" path="res://src/gameplay/pickup.tscn" id="5_opbiu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clpda"]
 texture = ExtResource("1_tnd4q")
@@ -2011,3 +2012,51 @@ kind = "left2"
 [node name="WarpTile6" parent="." instance=ExtResource("5_ht8uj")]
 position = Vector2(-420, 84)
 kind = "right2"
+
+[node name="Pickup" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-300, -204)
+kind = "door1"
+
+[node name="Pickup2" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-168, -204)
+kind = "door2"
+
+[node name="Pickup3" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-96, -192)
+kind = "door3"
+
+[node name="Pickup7" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-348, -60)
+
+[node name="Pickup8" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-348, -84)
+
+[node name="Pickup9" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-324, -84)
+
+[node name="Pickup10" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-324, -60)
+
+[node name="Pickup11" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-228, -48)
+kind = "heart"
+
+[node name="Pickup12" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-504, -192)
+kind = "heartPiece"
+
+[node name="Pickup13" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-468, -192)
+kind = "heartPiece"
+
+[node name="Pickup4" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-84, -96)
+kind = "bomb"
+
+[node name="Pickup5" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-96, -48)
+kind = "boots"
+
+[node name="Pickup6" parent="." instance=ExtResource("5_opbiu")]
+position = Vector2(-336, -180)
+kind = "creaturePhasing"

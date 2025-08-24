@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://v7gpoudpi5yn"]
+[gd_scene load_steps=6 format=3 uid="uid://v7gpoudpi5yn"]
 
 [ext_resource type="Shader" uid="uid://dj5mxk0yibeiu" path="res://src/gameplay/crt_luminance_preservation.gdshader" id="1_4h5e2"]
+[ext_resource type="Script" uid="uid://cal0ohrx6qun" path="res://src/gameplay/gameplay_crt.gd" id="1_vv5xl"]
 [ext_resource type="PackedScene" uid="uid://b48flw3v5qk7q" path="res://src/gameplay/world.tscn" id="2_b363w"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_spf5d"]
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vv5xl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_b363w")
