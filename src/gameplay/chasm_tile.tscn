@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://eqgd3hsnw5r4"]
+
+[ext_resource type="Texture2D" uid="uid://nkd7phgo12dn" path="res://assets/Oryx 16-bit Fantasy/Sliced/world_24x24/oryx_16bit_fantasy_world_1830.png" id="1_26vws"]
+[ext_resource type="Script" uid="uid://55fxqh7n25h3" path="res://src/gameplay/chasm_tile.gd" id="1_yjgnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kstf"]
+size = Vector2(9, 9)
+
+[node name="ChasmTile" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_yjgnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5kstf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_26vws")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

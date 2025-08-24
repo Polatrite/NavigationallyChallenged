@@ -1,21 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://tjoubmtpeouu"]
+[gd_scene load_steps=5 format=3 uid="uid://tjoubmtpeouu"]
 
 [ext_resource type="Script" uid="uid://bs0jfyxs8t0l8" path="res://src/gameplay/player.gd" id="1_4j6do"]
 [ext_resource type="Texture2D" uid="uid://cwfn5c4o3r38l" path="res://assets/Oryx 16-bit Fantasy/oryx_16bit_fantasy_creatures_trans.png" id="2_oyjl1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x6rxk"]
-radius = 6.0
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4j6do"]
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 4
+collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_4j6do")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x6rxk")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+texture = ExtResource("2_oyjl1")
+hframes = 20
+vframes = 27
+frame = 462
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_oyjl1")
 hframes = 20
 vframes = 27
 frame = 63
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4j6do")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
