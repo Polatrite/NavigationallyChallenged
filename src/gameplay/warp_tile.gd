@@ -37,7 +37,7 @@ func setup_sprite():
 			should_reveal = true
 		if result[1] == 3 and Global.unlocks["door3"] == true:
 			should_reveal = true
-	$StaticBody2D/CollisionShape2D.disabled = should_reveal
+	$StaticBody2D/CollisionShape2D.set_deferred("disabled", should_reveal)
 	if should_reveal:
 		$Sprite2D.texture = dir_map[result[0]]
 		$Sprite2D.modulate = color_map[result[1]]
